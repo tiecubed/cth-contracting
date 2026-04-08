@@ -4,31 +4,28 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "Page Not Found | CTH Contracting Solutions";
-const pageDesc = "The page you are looking for could not be found. Visit our homepage or contact us for assistance.";
+const pageDesc = "The page you're looking for doesn't exist. Browse our services or contact us for help.";
 ---
 
 <Layout title={pageTitle} description={pageDesc}>
   <Header />
   
-  <section class="py-24 text-center bg-gold-50">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-6xl mb-6">🔍</div>
-      <h1 class="text-4xl md:text-5xl font-bold text-red-900 mb-4">
-        Page Not Found
-      </h1>
-      <p class="text-xl text-red-800 mb-8">
-        Sorry, the page you're looking for doesn't exist or has been moved.
+  <section class="min-h-screen flex items-center justify-center py-20 bg-neutral-900">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <div class="text-6xl font-black text-neutral-700 mb-6">404</div>
+      <h1 class="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-wide">Page Not Found</h1>
+      <p class="text-xl text-gold-400 mb-6">Looks like you've wandered off the construction site.</p>
+      <p class="text-neutral-400 mb-8">
+        The page you're looking for doesn't exist or has been moved.
       </p>
-      
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/" class="btn-primary">Go to Homepage</a>
-        <a href="/contact" class="btn-outline">Contact Us</a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-10 rounded transition-all duration-300 uppercase tracking-wider">
+          Back to Home
+        </a>
+        <a href="/services" class="border-2 border-white text-white font-black py-4 px-10 rounded hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider">
+          View Services
+        </a>
       </div>
-      
-      <p class="mt-8 text-red-700">
-        Or call us at 
-        <a href="tel:15551234567" class="text-red-900 font-bold">(555) 123-4567</a>
-      </p>
     </div>
   </section>
   

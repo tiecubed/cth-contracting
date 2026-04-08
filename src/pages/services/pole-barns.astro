@@ -3,8 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-const pageTitle = "Pole Barn Builders Georgia | Custom Post-Frame Buildings | CTH";
-const pageDesc = "Expert pole barn builders in Georgia. Custom post-frame buildings for agricultural, workshop, garage & storage. Free estimates. Licensed & insured contractor.";
+const pageTitle = "Pole Barn Builders Georgia | Custom Post-Frame Construction | CTH";
+const pageDesc = "Custom pole barn builders in Georgia. Agricultural buildings, workshops, garages & storage. Quality materials, expert craftsmanship, fair pricing. Free estimates!";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -12,18 +12,23 @@ const jsonLd = {
   "name": "Pole Barn Building Services",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "CTH Contracting Solutions",
-    "areaServed": "Georgia"
+    "name": "CTH Contracting Solutions"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Georgia"
   },
   "serviceType": "Pole Barn Construction",
   "description": pageDesc
 };
 
-const benefits = [
-  { title: "Fast Construction", desc: "Post-frame buildings go up quickly" },
-  { title: "Cost Effective", desc: "Less expensive than traditional methods" },
-  { title: "Durable & Strong", desc: "Built for Georgia weather" },
-  { title: "Versatile Design", desc: "Customize to your needs" },
+const features = [
+  { title: "Custom Design", desc: "Built to your exact specifications", icon: "📐" },
+  { title: "Quality Materials", desc: "Premium lumber and metal roofing", icon: "🪵" },
+  { title: "Expert Crew", desc: "Experienced post-frame builders", icon: "👷" },
+  { title: "Permit Handling", desc: "We navigate the paperwork", icon: "📋" },
+  { title: "Built to Last", desc: "40+ year lifespan", icon: "⏱️" },
+  { title: "Warranty", desc: "Satisfaction guaranteed", icon: "🛡️" }
 ];
 ---
 
@@ -31,46 +36,108 @@ const benefits = [
   <Header />
   
   <!-- Hero -->
-  <section class="relative bg-gradient-to-br from-red-900 via-red-800 to-red-700 text-white py-16 border-b-4 border-gold-400">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <div class="text-5xl mb-4">🏗️</div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow-lg">
-          Georgia's Pole Barn Experts
-        </h1>
-        <p class="text-xl text-gold-100 mb-6">
-          Custom post-frame buildings engineered for your needs. Agricultural barns, workshops, 
-          garages, and more—built to last.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact" class="btn-primary">Get Free Quote</a>
-          <a href="tel:15551234567" class="btn-secondary">Call (555) 123-4567</a>
-        </div>
+  <section class="bg-gradient-to-r from-red-900 to-red-800 text-white py-20 border-b-4 border-gold-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-4 uppercase tracking-wide">Pole Barn Builders Georgia</h1>
+      <p class="text-xl md:text-2xl text-gold-200 max-w-4xl mx-auto mb-8">
+        Custom post-frame buildings built to last. Workshops, garages, agricultural buildings & more.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-10 rounded uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+          Free Estimate
+        </a>
+        <a href="tel:15551234567" class="border-2 border-white text-white font-black py-4 px-10 rounded uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+          Call (555) 123-4567
+        </a>
       </div>
     </div>
   </section>
   
-  <!-- Benefits -->
-  <section class="py-16 bg-white">
+  <!-- Features Grid -->
+  <section class="py-20 bg-neutral-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-red-900 text-center mb-12">Why Choose a Post-Frame Building?</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {benefits.map(benefit => (
-          <div class="bg-gold-50 p-6 rounded-xl border-2 border-gold-200">
-            <h3 class="text-lg font-bold text-red-900 mb-2">{benefit.title}</h3>
-            <p class="text-red-800">{benefit.desc}</p>
+      <h2 class="text-3xl font-bold text-white text-center mb-12">Why Choose Our Pole Barns</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map(feature => (
+          <div class="bg-neutral-800 p-6 rounded-xl shadow-lg border border-neutral-700">
+            <div class="text-4xl mb-4">{feature.icon}</div>
+            <h3 class="text-xl font-bold text-white mb-2">{feature.title}</h3>
+            <p class="text-neutral-400">{feature.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
   
+  <!-- Types -->
+  <section class="py-20 bg-neutral-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">Pole Barn Types We Build</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-neutral-800 p-8 rounded-xl border border-neutral-700">
+          <h3 class="text-2xl font-bold text-gold-400 mb-4">Agricultural Barns</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li>• Hay and equipment storage</li>
+            <li>• Livestock shelters</li>
+            <li>• Horse barns & riding arenas</li>
+            <li>• Feed storage buildings</li>
+          </ul>
+        </div>
+        <div class="bg-neutral-800 p-8 rounded-xl border border-neutral-700">
+          <h3 class="text-2xl font-bold text-gold-400 mb-4">Workshops & Garages</h3>
+          <ul class="space-y-2 text-neutral-300">
+            <li>• RV & motorhome shelters</li>
+            <li>• Equipment workshops</li>
+            <li>• Multi-bay garages</li>
+            <li>• Man caves & hobby shops</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Process -->
+  <section class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">Our Process</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 flex items-center justify-center text-2xl font-bold text-gold-400 border-2 border-gold-400">1</div>
+          <h4 class="font-bold text-white mb-2">Consultation</h4>
+          <p class="text-neutral-400">Discuss your needs and vision</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 flex items-center justify-center text-2xl font-bold text-gold-400 border-2 border-gold-400">2</div>
+          <h4 class="font-bold text-white mb-2">Design</h4>
+          <p class="text-neutral-400">Custom plans & quote</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 flex items-center justify-center text-2xl font-bold text-gold-400 border-2 border-gold-400">3</div>
+          <h4 class="font-bold text-white mb-2">Construction</h4>
+          <p class="text-neutral-400">Expert crew builds your barn</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 flex items-center justify-center text-2xl font-bold text-gold-400 border-2 border-gold-400">4</div>
+          <h4 class="font-bold text-white mb-2">Completion</h4>
+          <p class="text-neutral-400">Final walk-through & warranty</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- CTA -->
-  <section class="bg-red-700 text-white py-16 border-y-4 border-gold-400">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready to Build Your Pole Barn?</h2>
-      <p class="text-xl text-gold-100 mb-8">Get a free, no-obligation estimate.</p>
-      <a href="/contact" class="btn-primary">Request Free Estimate</a>
+  <section class="py-20 bg-red-900 border-y-4 border-gold-400">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-wide">Get Your Free Pole Barn Quote</h2>
+      <p class="text-xl text-gold-200 mb-8">No pressure, no obligation. Just honest pricing and expert advice.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-gold-400 hover:bg-gold-300 text-black font-black py-4 px-10 rounded transition-all duration-300 uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-1">
+          Request Free Quote
+        </a>
+        <a href="tel:15551234567" class="border-2 border-white text-white font-black py-4 px-10 rounded hover:bg-white hover:text-red-900 transition-all duration-300 uppercase tracking-wider">
+          Call Now
+        </a>
+      </div>
     </div>
   </section>
   

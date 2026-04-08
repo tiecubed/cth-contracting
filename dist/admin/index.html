@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>CTH Contracting - Content Manager</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <!-- Load Decap CMS from CDN -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <!-- Initialize with config -->
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'git-gateway',
+          branch: 'main',
+          identity_url: 'https://cthcontractingsolutions.com',
+          gateway_url: 'https://cthcontractingsolutions.com/.netlify/git-gateway',
+        },
+        site_url: 'https://cthcontractingsolutions.com',
+        publish_mode: 'simple',
+        media_folder: 'public/images',
+        public_folder: '/images',
+        collections: [
+          {
+            name: 'site_settings',
+            label: 'Site Settings',
+            files: [
+              {
+                name: 'general',
+                label: 'General Settings',
+                file: 'src/content/settings/general.json',
+                fields: [
+                  { name: 'site_title', label: 'Site Title', widget: 'string', default: 'CTH Contracting Solutions' },
+                  { name: 'phone', label: 'Phone Number', widget: 'string', default: '(555) 123-4567' },
+                  { name: 'email', label: 'Email', widget: 'string', default: 'info@cthcontractingsolutions.com' },
+                  { name: 'business_hours', label: 'Business Hours', widget: 'string', default: 'Mon-Fri: 7AM-6PM, Sat: 8AM-2PM' },
+                  { name: 'years_experience', label: 'Years Experience', widget: 'number', default: 15 },
+                  { name: 'projects_completed', label: 'Projects Completed', widget: 'number', default: 500 },
+                ]
+              }
+            ]
+          },
+          {
+            name: 'homepage',
+            label: 'Homepage Content',
+            files: [
+              {
+                name: 'hero',
+                label: 'Hero Section',
+                file: 'src/content/homepage/hero.json',
+                fields: [
+                  { name: 'headline', label: 'Headline', widget: 'string', default: 'Georgia\'s Trusted Pole Barn & Metal Roofing Experts' },
+                  { name: 'subheadline', label: 'Subheadline', widget: 'text', default: 'Professional construction services built on quality, integrity, and lasting relationships.' },
+                  { name: 'cta_primary', label: 'Primary CTA Text', widget: 'string', default: 'Get Free Quote' },
+                  { name: 'cta_secondary', label: 'Secondary CTA Text', widget: 'string', default: 'Our Services' }
+                ]
+              },
+              {
+                name: 'services_section',
+                label: 'Services Section',
+                file: 'src/content/homepage/services.json',
+                fields: [
+                  { name: 'title', label: 'Section Title', widget: 'string', default: 'Construction Services Built to Last' },
+                  { name: 'description', label: 'Section Description', widget: 'text' }
+                ]
+              },
+              {
+                name: 'trust_section',
+                label: 'Why Choose Us Section',
+                file: 'src/content/homepage/trust.json',
+                fields: [
+                  { name: 'title', label: 'Section Title', widget: 'string', default: 'Why Choose CTH Contracting?' },
+                  { name: 'points', label: 'Trust Points', widget: 'list', fields: [
+                    { name: 'icon', label: 'Icon', widget: 'string', default: '✓' },
+                    { name: 'title', label: 'Title', widget: 'string' },
+                    { name: 'description', label: 'Description', widget: 'text' }
+                  ]}
+                ]
+              }
+            ]
+          },
+          {
+            name: 'services',
+            label: 'Services',
+            folder: 'src/content/services',
+            create: true,
+            slug: '{{slug}}',
+            fields: [
+              { name: 'title', label: 'Service Title', widget: 'string' },
+              { name: 'shortDesc', label: 'Short Description', widget: 'string' },
+              { name: 'description', label: 'Full Description', widget: 'markdown' },
+              { name: 'icon', label: 'Icon Emoji', widget: 'string', default: '🔨' },
+              { name: 'features', label: 'Features List', widget: 'list', field: { name: 'feature', label: 'Feature', widget: 'string' } },
+              { name: 'image', label: 'Service Image', widget: 'image', required: false },
+              { name: 'order', label: 'Display Order', widget: 'number', default: 0 }
+            ]
+          },
+          {
+            name: 'about',
+            label: 'About Page',
+            files: [
+              {
+                name: 'company',
+                label: 'Company Story',
+                file: 'src/content/about/company.json',
+                fields: [
+                  { name: 'story', label: 'Our Story', widget: 'markdown' },
+                  { name: 'mission', label: 'Mission Statement', widget: 'text' },
+                  { name: 'founded_year', label: 'Year Founded', widget: 'number', default: 2008 }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'testimonials',
+            label: 'Testimonials',
+            folder: 'src/content/testimonials',
+            create: true,
+            fields: [
+              { name: 'name', label: 'Customer Name', widget: 'string' },
+              { name: 'location', label: 'Location', widget: 'string' },
+              { name: 'service', label: 'Service Used', widget: 'string' },
+              { name: 'rating', label: 'Rating (1-5)', widget: 'number', min: 1, max: 5 },
+              { name: 'quote', label: 'Testimonial', widget: 'text' },
+              { name: 'date', label: 'Date', widget: 'datetime' },
+              { name: 'featured', label: 'Featured on Homepage', widget: 'boolean', default: false }
+            ]
+          },
+          {
+            name: 'gallery',
+            label: 'Photo Gallery',
+            files: [
+              {
+                name: 'projects',
+                label: 'Project Photos',
+                file: 'src/content/gallery/projects.json',
+                fields: [
+                  { name: 'images', label: 'Project Images', widget: 'list', fields: [
+                    { name: 'image', label: 'Image', widget: 'image' },
+                    { name: 'caption', label: 'Caption', widget: 'string' },
+                    { name: 'category', label: 'Category', widget: 'select', options: ['Pole Barn', 'Metal Roof', 'Fence', 'General'] }
+                  ]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

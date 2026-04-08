@@ -1,10 +1,16 @@
 ---
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
+];
+
+const serviceDropdown = [
+  { label: 'Pole Barns', href: '/services/pole-barns' },
+  { label: 'Roofing Services', href: '/services/roofing' },
+  { label: 'Fence Building', href: '/services/fencing' },
+  { label: 'Land Grading', href: '/services/grading' },
 ];
 ---
 
@@ -17,16 +23,31 @@ const navItems = [
       </a>
       
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex space-x-8">
-        {navItems.map(item => (
-          <a
-            href={item.href}
-            class="text-white/90 hover:text-gold-400 text-sm font-medium transition-colors tracking-wide"
-            aria-current={Astro.url.pathname === item.href ? 'page' : undefined}
-          >
-            {item.label}
-          </a>
-        ))}
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="/" class="text-white/90 hover:text-gold-400 text-sm font-medium transition-colors tracking-wide">Home</a>
+        
+        <!-- Services Dropdown -->
+        <div class="relative group">
+          <button class="text-white/90 hover:text-gold-400 text-sm font-medium transition-colors tracking-wide flex items-center gap-1">
+            Services
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-2 w-56 bg-neutral-900/95 backdrop-blur-md border border-gold-400/30 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2">
+            <div class="py-2">
+              {serviceDropdown.map(item => (
+                <a href={item.href} class="block px-4 py-3 text-white hover:text-gold-400 hover:bg-neutral-800 transition-colors text-sm">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        <a href="/reviews" class="text-white/90 hover:text-gold-400 text-sm font-medium transition-colors tracking-wide">Reviews</a>
+        <a href="/about" class="text-white/90 hover:text-gold-400 text-sm font-medium transition-colors tracking-wide">About</a>
+        <a href="/contact" class="text-white/90 hover:text-gold-400 text-sm font-medium transition-colors tracking-wide">Contact</a>
       </nav>
       
       <!-- CTA Button -->
@@ -51,14 +72,16 @@ const navItems = [
   <!-- Mobile Navigation -->
   <div id="mobile-menu" class="hidden md:hidden bg-neutral-900/95 backdrop-blur-sm border-t border-gold-400/30">
     <div class="px-4 py-4 space-y-2">
-      {navItems.map(item => (
-        <a
-          href={item.href}
-          class="block py-2 text-gold-100 hover:text-gold-400 font-medium"
-        >
-          {item.label}
+      <a href="/" class="block py-2 text-gold-100 hover:text-gold-400 font-medium">Home</a>
+      <p class="text-gold-400 font-medium py-2">Services:</p>
+      {serviceDropdown.map(item => (
+        <a href={item.href} class="block py-2 pl-4 text-gold-100 hover:text-gold-400 font-medium text-sm">
+          • {item.label}
         </a>
       ))}
+      <a href="/reviews" class="block py-2 text-gold-100 hover:text-gold-400 font-medium">Reviews</a>
+      <a href="/about" class="block py-2 text-gold-100 hover:text-gold-400 font-medium">About</a>
+      <a href="/contact" class="block py-2 text-gold-100 hover:text-gold-400 font-medium">Contact</a>
       <a href="/contact" class="block py-2 text-orange-400 font-bold">
         Get Free Estimate
       </a>

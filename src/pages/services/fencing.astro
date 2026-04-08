@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Fence Building Greenville SC | Privacy & Security Fencing | CTH";
+const pageDesc = "Professional fence installation in Greenville SC & Anderson SC. Privacy fences, vinyl, chain link, ornamental metal. Quality materials, expert craftsmanship. Free estimates!";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Fence Building Services",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CTH Contracting Solutions"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Greenville, SC"
+  },
+  "serviceType": "Fence Installation",
+  "description": pageDesc
+};
+
+const fenceTypes = [
+  { title: "Privacy Fencing", desc: "Complete privacy for your property", icon: "🌳" },
+  { title: "Vinyl Fencing", desc: "Low maintenance, long-lasting", icon: "✨" },
+  { title: "Chain Link", desc: "Durable and cost-effective", icon: "⛓️" },
+  { title: "Ornamental Metal", desc: "Elegant security solutions", icon: "🏛️" },
+  { title: "Farm & Ranch", desc: "Agricultural and livestock fencing", icon: "🚜" },
+  { title: "Gate Installation", desc: "Custom gates for any fence", icon: "🚪" }
+];
+---
+
+<Layout title={pageTitle} description={pageDesc} canonical="/services/fencing" jsonLd={jsonLd}>
+  <Header />
+  
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-red-900 to-red-800 text-white py-20 border-b-4 border-gold-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-4 uppercase tracking-wide">Fence Building</h1>
+      <p class="text-xl md:text-2xl text-gold-200 max-w-4xl mx-auto mb-8">
+        Secure, beautiful fencing for any property. Wood, vinyl, chain link & ornamental metal.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-10 rounded uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1">
+          Free Estimate
+        </a>
+        <a href="tel:8646171719" class="border-2 border-white text-white font-black py-4 px-10 rounded uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+          Call (864) 617-1719
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Fence Types -->
+  <section class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">Fence Types We Build</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {fenceTypes.map(fence => (
+          <div class="bg-neutral-800 p-6 rounded-xl shadow-lg border border-neutral-700">
+            <div class="text-4xl mb-4">{fence.icon}</div>
+            <h3 class="text-xl font-bold text-white mb-2">{fence.title}</h3>
+            <p class="text-neutral-400">{fence.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Process -->
+  <section class="py-20 bg-neutral-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">Our Fence Installation Process</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 flex items-center justify-center text-2xl font-bold text-gold-400 border-2 border-gold-400">1</div>
+          <h4 class="font-bold text-white mb-2">Consultation</h4>
+          <p class="text-neutral-400">Free on-site estimate</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 flex items-center justify-center text-2xl font-bold text-gold-400 border-2 border-gold-400">2</div>
+          <h4 class="font-bold text-white mb-2">Planning</h4>
+          <p class="text-neutral-400">Design & material selection</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 flex items-center justify-center text-2xl font-bold text-gold-400 border-2 border-gold-400">3</div>
+          <h4 class="font-bold text-white mb-2">Installation</h4>
+          <p class="text-neutral-400">Professional crew builds</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-900 flex items-center justify-center text-2xl font-bold text-gold-400 border-2 border-gold-400">4</div>
+          <h4 class="font-bold text-white mb-2">Completion</h4>
+          <p class="text-neutral-400">Final walk-through</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="py-20 bg-red-900 border-y-4 border-gold-400">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-wide">Ready for Your New Fence?</h2>
+      <p class="text-xl text-gold-200 mb-8">Free estimates. Quality materials. Expert installation.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-gold-400 hover:bg-gold-300 text-black font-black py-4 px-10 rounded transition-all duration-300 uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-1">
+          Get Free Quote
+        </a>
+        <a href="tel:8646171719" class="border-2 border-white text-white font-black py-4 px-10 rounded hover:bg-white hover:text-red-900 transition-all duration-300 uppercase tracking-wider">
+          Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

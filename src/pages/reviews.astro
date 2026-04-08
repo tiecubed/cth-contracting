@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Customer Reviews | CTH Contracting Solutions | Georgia";
+const pageDesc = "Read what our customers say about CTH Contracting Solutions. 5-star reviews for pole barns, roofing, fencing, and grading services across Georgia and South Carolina.";
+
+const reviews = [
+  {
+    quote: "They completely transformed our deck. What impressed me most was the communication — I always knew what was happening and when. They finished earlier than promised, and the craftsmanship is top notch.",
+    author: "Alyssa D.",
+    location: "Clemson, SC",
+    rating: 5
+  },
+  {
+    quote: "We wanted privacy fencing in our backyard before summer, and CTH delivered. The price was fair, the work was clean, and the crew was super respectful of our property. The fence looks amazing.",
+    author: "Marcus P.",
+    location: "Seneca, SC",
+    rating: 5
+  },
+  {
+    quote: "Every other contractor we called gave us the runaround, but CTH showed up when they said they would and stuck to the budget. That kind of honesty is rare, and we'll definitely use them again.",
+    author: "Brian T.",
+    location: "Greenville, SC",
+    rating: 5
+  },
+  {
+    quote: "We've hired CTH for multiple jobs — roof repair, fence installation, and even a small remodel. Each time, the quality has been excellent. They treat you like family, not just another job.",
+    author: "Sharon K.",
+    location: "Easley, SC",
+    rating: 5
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ReviewPage",
+  "name": "CTH Contracting Solutions Reviews",
+  "description": pageDesc,
+  "url": "https://cthcontractingsolutions.com/reviews",
+  "review": reviews.map(r => ({
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": r.rating
+    },
+    "author": {
+      "@type": "Person",
+      "name": r.author
+    },
+    "reviewBody": r.quote
+  }))
+};
+---
+
+<Layout title={pageTitle} description={pageDesc} canonical="/reviews" jsonLd={jsonLd}>
+  <Header />
+  
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-red-900 to-red-800 text-white py-20 border-b-4 border-gold-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-wide">Customer Reviews</h1>
+      <p class="text-xl text-gold-200 max-w-3xl mx-auto">
+        Don't just take our word for it. See what our customers have to say about working with CTH Contracting.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Reviews Grid -->
+  <section class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        {reviews.map((review, index) => (
+          <div class="bg-neutral-800 p-8 rounded-xl shadow-lg border border-neutral-700 relative">
+            <!-- Quote icon -->
+            <div class="absolute top-4 right-4 text-6xl text-neutral-700 font-serif">"</div>
+            
+            <!-- Stars -->
+            <div class="flex gap-1 mb-4">
+              {Array.from({ length: review.rating }).map(() => (
+                <span class="text-gold-400 text-xl">★</span>
+              ))}
+            </div>
+            
+            <!-- Quote -->
+            <blockquote class="text-neutral-300 text-lg leading-relaxed mb-6 relative z-10">
+              {review.quote}
+            </blockquote>
+            
+            <!-- Author -->
+            <div class="border-t border-neutral-700 pt-4">
+              <div class="font-bold text-white text-lg">{review.author}</div>
+              <div class="text-gold-400">{review.location}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats Section -->
+  <section class="py-20 bg-neutral-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="bg-neutral-800 p-8 rounded-xl border border-neutral-700">
+          <div class="text-5xl font-black text-gold-400 mb-2">5★</div>
+          <div class="text-white font-bold text-xl">Average Rating</div>
+          <div class="text-neutral-400">Based on customer reviews</div>
+        </div>
+        <div class="bg-neutral-800 p-8 rounded-xl border border-neutral-700">
+          <div class="text-5xl font-black text-gold-400 mb-2">500+</div>
+          <div class="text-white font-bold text-xl">Projects Completed</div>
+          <div class="text-neutral-400">Across Georgia & South Carolina</div>
+        </div>
+        <div class="bg-neutral-800 p-8 rounded-xl border border-neutral-700">
+          <div class="text-5xl font-black text-gold-400 mb-2">15+</div>
+          <div class="text-white font-bold text-xl">Years Experience</div>
+          <div class="text-neutral-400">Quality craftsmanship</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="py-20 bg-red-900 border-y-4 border-gold-400">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-wide">Ready to Join Our Happy Customers?</h2>
+      <p class="text-xl text-gold-200 mb-8">Get a free estimate and experience the CTH difference for yourself.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-gold-400 hover:bg-gold-300 text-black font-black py-4 px-10 rounded transition-all duration-300 uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-1">
+          Get Free Quote
+        </a>
+        <a href="tel:15551234567" class="border-2 border-white text-white font-black py-4 px-10 rounded hover:bg-white hover:text-red-900 transition-all duration-300 uppercase tracking-wider">
+          Call (555) 123-4567
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

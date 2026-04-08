@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "CTH Contracting Solutions | Pole Barn Builders & Metal Roofing in Georgia";
+const pageDesc = "Professional pole barn construction, metal roof replacement, fence building, and truss repair services in Georgia. Free estimates. Licensed & insured contractor with 15+ years experience.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CTH Contracting Solutions",
+  "image": "https://cthcontractingsolutions.com/og-image.jpg",
+  "@id": "https://cthcontractingsolutions.com",
+  "url": "https://cthcontractingsolutions.com",
+  "telephone": "+15551234567",
+  "email": "info@cthcontractingsolutions.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "GA",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Georgia"
+  },
+  "priceRange": "$$",
+  "serviceType": ["Pole Barn Construction", "Metal Roofing", "Fence Building", "Truss Repair", "General Contracting"]
+};
+
+const services = [
+  {
+    title: "Pole Barn Building",
+    desc: "Custom pole barns built to last. Agricultural buildings, workshops, garages, and storage buildings.",
+    icon: "🏗️",
+    href: "/services/pole-barns"
+  },
+  {
+    title: "Metal Roof Replacement",
+    desc: "Durable metal roofing solutions that protect your investment for decades. Expert installation guaranteed.",
+    icon: "🏠",
+    href: "/services/metal-roofs"
+  },
+  {
+    title: "Fence Building",
+    desc: "Beautiful, secure fencing for residential and commercial properties. Wood, vinyl, and metal options.",
+    icon: "🚧",
+    href: "/services/fences"
+  },
+  {
+    title: "Truss Repair",
+    desc: "Structural truss repair and replacement. Licensed engineers ensure your building meets code.",
+    icon: "🔧",
+    href: "/services/truss-repair"
+  },
+  {
+    title: "General Contracting",
+    desc: "Full-service construction management. From small repairs to major builds, we handle it all.",
+    icon: "🔨",
+    href: "/services/general-contracting"
+  },
+];
+
+const features = [
+  { title: "Licensed & Insured", desc: "Full coverage for your protection" },
+  { title: "15+ Years Experience", desc: "Proven track record of quality" },
+  { title: "Free Estimates", desc: "No-obligation quotes on all projects" },
+  { title: "Local & Trusted", desc: "Georgia-based contractors you can count on" },
+];
+---
+
+<Layout title={pageTitle} description={pageDesc} canonical="/" jsonLd={jsonLd}>
+  <Header />
+  
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white py-20 lg:py-32">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Georgia's Trusted <span class="text-brand-300">Pole Barn</span> & Metal Roofing Experts
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-brand-100">
+          Professional construction services built on quality, integrity, and lasting relationships. 
+          Serving Georgia homeowners and businesses for over 15 years.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact" class="btn-primary text-lg px-8 py-4 bg-brand-500 hover:bg-brand-400">
+            Get Free Quote
+          </a>
+          <a href="/services" class="btn-secondary text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-brand-900">
+            Our Services
+          </a>
+        </div>
+        <p class="mt-6 text-brand-200">📞 Call (555) 123-4567 for immediate assistance</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Bar -->
+  <section class="bg-gray-50 py-8 border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {features.map(feat => (
+          <div>
+            <h3 class="font-semibold text-gray-900">{feat.title}</h3>
+            <p class="text-sm text-gray-600">{feat.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section class="py-16 lg:py-24" id="services">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Construction Services Built to Last
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          From custom pole barns to metal roof replacements, we deliver quality craftsmanship 
+          that stands the test of time.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <a href={service.href} class="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-8 border border-gray-100">
+            <div class="text-4xl mb-4">{service.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">
+              {service.title}
+            </h3>
+            <p class="text-gray-600">{service.desc}</p>
+            <span class="inline-flex items-center mt-4 text-brand-600 font-medium">
+              Learn more →
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="bg-brand-700 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Ready to Start Your Project?
+      </h2>
+      <p class="text-xl text-brand-100 mb-8 max-w-2xl mx-auto">
+        Get a free, no-obligation estimate for your construction project. 
+        We're ready to bring your vision to life.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/contact" class="btn-primary bg-white text-brand-700 hover:bg-gray-100">
+          Request Free Quote
+        </a>
+        <a href="tel:15551234567" class="btn-secondary border-white text-white hover:bg-white/10">
+          Call (555) 123-4567
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Trust Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Why Choose CTH Contracting?
+          </h2>
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">✓</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Quality Materials</h4>
+                <p class="text-gray-600">We use only premium-grade materials that meet or exceed local building codes.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">✓</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Experienced Crew</h4>
+                <p class="text-gray-600">Our team has 15+ years of hands-on construction experience.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">✓</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">On-Time Delivery</h4>
+                <p class="text-gray-600">We respect your time and complete projects on schedule.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">✓</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Warranty Protected</h4>
+                <p class="text-gray-600">All work backed by comprehensive warranties for peace of mind.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400">
+          <span class="text-lg">Photo Gallery Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Banner -->
+  <section class="py-12 border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-lg text-gray-600">
+        Have questions? <a href="/contact" class="text-brand-600 font-semibold hover:underline">Contact us</a> today or call 
+        <a href="tel:15551234567" class="text-brand-600 font-semibold hover:underline">(555) 123-4567</a>
+      </p>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

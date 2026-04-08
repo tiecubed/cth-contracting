@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Construction Services | Pole Barns, Metal Roofing, Fencing | CTH";
+const pageDesc = "Full-service contractor in Georgia. Pole barns, metal roof replacement, fence building, truss repair & general contracting. Free estimates. Licensed & insured.";
+
+const services = [
+  {
+    title: "Pole Barn Building",
+    shortDesc: "Custom post-frame buildings for every need",
+    description: "From agricultural barns to workshops, garages, and storage buildings, we design and construct durable pole barns tailored to your specifications. Our post-frame buildings feature quality materials and expert craftsmanship for structures that last generations.",
+    features: ["Custom designs", "Agricultural buildings", "Workshops & garages", "Storage buildings", "Permit handling"],
+    icon: "🏗️",
+    href: "/services/pole-barns"
+  },
+  {
+    title: "Metal Roof Replacement",
+    shortDesc: "Durable roofing that protects for decades",
+    description: "Upgrade to a metal roof that stands up to Georgia's weather while adding value to your property. We install standing seam, corrugated, and specialty metal roofing systems with professional results guaranteed.",
+    features: ["Standing seam roofs", "Corrugated metal", "Reroofing services", "Leak repairs", "Energy efficient options"],
+    icon: "🏠",
+    href: "/services/metal-roofs"
+  },
+  {
+    title: "Fence Building",
+    shortDesc: "Secure, beautiful fencing for any property",
+    description: "Enhance your property's security and curb appeal with professional fence installation. We build wood privacy fences, vinyl fencing, chain link, and ornamental metal fences for residential and commercial properties.",
+    features: ["Wood privacy fences", "Vinyl fencing", "Chain link", "Ornamental metal", "Farm & ranch fencing"],
+    icon: "🚧",
+    href: "/services/fences"
+  },
+  {
+    title: "Truss Repair",
+    shortDesc: "Structural solutions by licensed professionals",
+    description: "Damaged trusses compromise your building's integrity. Our licensed team repairs and replaces roof trusses, floor trusses, and structural supports, ensuring your building meets code and remains safe for years to come.",
+    features: ["Roof truss repair", "Floor truss replacement", "Structural support", "Code compliance", "Engineering available"],
+    icon: "🔧",
+    href: "/services/truss-repair"
+  },
+  {
+    title: "General Contracting",
+    shortDesc: "Complete construction management",
+    description: "From small repairs to major construction projects, we provide comprehensive contracting services. We manage every phase of your project, coordinating subcontractors, permits, inspections, and quality control.",
+    features: ["Project management", "Renovations", "Additions", "Concrete work", "Siding & exterior"],
+    icon: "🔨",
+    href: "/services/general-contracting"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDesc} canonical="/services">
+  <Header />
+  
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-brand-800 to-brand-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
+      <p class="text-xl text-brand-100 max-w-3xl mx-auto">
+        Professional construction services across Georgia. Quality craftsmanship, fair pricing, and dependable results.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Services List -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16">
+        {services.map((service, index) => (
+          <div class={`grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+            <div class={index % 2 === 1 ? 'md:order-2' : ''}>
+              <div class="text-5xl mb-4">{service.icon}</div>
+              <h2 class="text-3xl font-bold text-gray-900 mb-2">{service.title}</h2>
+              <p class="text-xl text-brand-600 mb-4">{service.shortDesc}</p>
+              <p class="text-gray-600 mb-6">{service.description}</p>
+              <ul class="grid grid-cols-2 gap-2 mb-6">
+                {service.features.map(feature => (
+                  <li class="flex items-center gap-2 text-gray-700">
+                    <span class="text-brand-500">✓</span> {feature}
+                  </li>
+                ))}
+              </ul>
+              <a href="/contact" class="btn-primary">
+                Get Quote for {service.title}
+              </a>
+            </div>
+            <div class={`bg-gray-200 rounded-2xl aspect-[4/3] flex items-center justify-center text-gray-400 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
+              <span>{service.title} Photo</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="bg-brand-700 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Not Sure What You Need?</h2>
+      <p class="text-xl text-brand-100 mb-8">
+        Contact us for a free consultation. We'll help you determine the best solution for your project.
+      </p>
+      <a href="/contact" class="btn-primary bg-white text-brand-700 hover:bg-gray-100">
+        Schedule Free Consultation
+      </a>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

@@ -32,37 +32,37 @@ const jsonLd = {
 <Layout title={pageTitle} description={pageDesc} canonical="/" jsonLd={jsonLd}>
   <Header />
   
-  <!-- Hero Section - Full Screen with Background -->
-  <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1920&q=80') center/cover no-repeat;">
+  <!-- Hero Section - Full Screen with Barn Background -->
+  <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1569683795645-b62e50fbf103?w=1920&q=80') center/cover no-repeat;">
     
     <!-- Top Brand Text -->
     <div class="absolute top-24 left-0 right-0">
-      <p class="text-gold-300 text-sm md:text-base tracking-[0.3em] uppercase font-semibold">CTH Contracting Solutions</p>
+      <p class="text-gold-300 text-sm md:text-base tracking-[0.3em] uppercase font-semibold drop-shadow-lg">CTH Contracting Solutions</p>
     </div>
     
     <!-- Main Content -->
     <div class="max-w-4xl mx-auto pt-16">
       <!-- Large Logo -->
       <div class="mb-8">
-        <img src="/images/logo.png" alt="CTH Contracting Solutions" class="w-full max-w-md mx-auto drop-shadow-2xl" />
+        <img src="/images/logo.png" alt="CTH Contracting Solutions" class="w-full max-w-lg mx-auto drop-shadow-2xl" />
       </div>
       
       <!-- Tagline -->
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wide mb-6 text-shadow-lg">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-wide mb-6 drop-shadow-lg">
         Built Right in the Country
       </h1>
       
       <!-- Services -->
-      <p class="text-xl md:text-2xl text-gold-400 font-semibold tracking-wide mb-12">
+      <p class="text-xl md:text-2xl text-gold-400 font-bold tracking-wider mb-12 drop-shadow-md">
         Pole Barns • Roofing • Fencing • Grading
       </p>
       
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-4 px-10 rounded uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+        <a href="/contact" class="bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-10 rounded uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1">
           Get Estimate
         </a>
-        <a href="tel:15551234567" class="bg-transparent border-2 border-white text-white font-bold py-4 px-10 rounded uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+        <a href="tel:15551234567" class="bg-transparent border-2 border-white text-white font-black py-4 px-10 rounded uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300">
           Call Now
         </a>
       </div>
@@ -87,8 +87,8 @@ const jsonLd = {
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-neutral-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-neutral-700">
-          <div class="h-48 bg-gradient-to-br from-red-800 to-red-900 flex items-center justify-center">
+        <div class="bg-neutral-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-neutral-700 group">
+          <div class="h-48 bg-gradient-to-br from-red-800 to-red-900 flex items-center justify-center group-hover:from-red-700 group-hover:to-red-800 transition-all">
             <span class="text-6xl">🏗️</span>
           </div>
           <div class="p-6">
@@ -98,8 +98,8 @@ const jsonLd = {
           </div>
         </div>
         
-        <div class="bg-neutral-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-neutral-700">
-          <div class="h-48 bg-gradient-to-br from-red-800 to-red-900 flex items-center justify-center">
+        <div class="bg-neutral-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-neutral-700 group">
+          <div class="h-48 bg-gradient-to-br from-red-800 to-red-900 flex items-center justify-center group-hover:from-red-700 group-hover:to-red-800 transition-all">
             <span class="text-6xl">🏠</span>
           </div>
           <div class="p-6">
@@ -109,8 +109,8 @@ const jsonLd = {
           </div>
         </div>
         
-        <div class="bg-neutral-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-neutral-700">
-          <div class="h-48 bg-gradient-to-br from-red-800 to-red-900 flex items-center justify-center">
+        <div class="bg-neutral-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-neutral-700 group">
+          <div class="h-48 bg-gradient-to-br from-red-800 to-red-900 flex items-center justify-center group-hover:from-red-700 group-hover:to-red-800 transition-all">
             <span class="text-6xl">🚧</span>
           </div>
           <div class="p-6">
@@ -120,8 +120,8 @@ const jsonLd = {
           </div>
         </div>
         
-        <div class="bg-neutral-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-neutral-700">
-          <div class="h-48 bg-gradient-to-br from-red-800 to-red-900 flex items-center justify-center">
+        <div class="bg-neutral-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-neutral-700 group">
+          <div class="h-48 bg-gradient-to-br from-red-800 to-red-900 flex items-center justify-center group-hover:from-red-700 group-hover:to-red-800 transition-all">
             <span class="text-6xl">🚜</span>
           </div>
           <div class="p-6">
@@ -144,21 +144,21 @@ const jsonLd = {
           </h2>
           <div class="space-y-6">
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gold-400 flex items-center justify-center text-black font-bold">15+</div>
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gold-400 flex items-center justify-center text-black font-bold text-lg">15+</div>
               <div>
                 <h4 class="font-bold text-white text-lg">Years Experience</h4>
                 <p class="text-neutral-400">Proven track record of quality craftsmanship</p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gold-400 flex items-center justify-center text-black font-bold">✓</div>
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gold-400 flex items-center justify-center text-black font-bold text-xl">✓</div>
               <div>
                 <h4 class="font-bold text-white text-lg">Licensed & Insured</h4>
                 <p class="text-neutral-400">Full coverage for your protection</p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gold-400 flex items-center justify-center text-black font-bold">GA</div>
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gold-400 flex items-center justify-center text-black font-bold text-lg">GA</div>
               <div>
                 <h4 class="font-bold text-white text-lg">Georgia Owned</h4>
                 <p class="text-neutral-400">Local contractors you can trust</p>
@@ -166,13 +166,13 @@ const jsonLd = {
             </div>
           </div>
           <div class="mt-8">
-            <a href="/contact" class="inline-block bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-8 rounded transition-all duration-300">
+            <a href="/contact" class="inline-block bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-10 rounded transition-all duration-300 uppercase tracking-wider">
               Get Free Quote
             </a>
           </div>
         </div>
         <div class="relative">
-          <div class="aspect-square bg-gradient-to-br from-red-900 to-neutral-900 rounded-lg flex items-center justify-center border border-neutral-700">
+          <div class="aspect-video bg-gradient-to-br from-red-900 to-neutral-900 rounded-lg flex items-center justify-center border border-neutral-700">
             <span class="text-neutral-600 text-xl">Project Gallery Coming Soon</span>
           </div>
         </div>
@@ -182,19 +182,19 @@ const jsonLd = {
   
   <!-- CTA Section -->
   <section class="py-20 bg-red-900 relative overflow-hidden">
-    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-red-900 to-red-800"></div>
     <div class="relative max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-wide">
         Ready to Start Your Project?
       </h2>
       <p class="text-xl text-gold-200 mb-8">
         Get a free, no-obligation estimate. We're ready to bring your vision to life.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-gold-400 hover:bg-gold-300 text-black font-bold py-4 px-10 rounded transition-all duration-300">
+        <a href="/contact" class="bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-10 rounded transition-all duration-300 uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-1">
           Request Free Quote
         </a>
-        <a href="tel:15551234567" class="border-2 border-white text-white font-bold py-4 px-10 rounded hover:bg-white hover:text-red-900 transition-all duration-300">
+        <a href="tel:15551234567" class="border-2 border-white text-white font-black py-4 px-10 rounded hover:bg-white hover:text-red-900 transition-all duration-300 uppercase tracking-wider">
           Call (555) 123-4567
         </a>
       </div>

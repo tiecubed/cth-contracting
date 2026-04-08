@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "About Us | CTH Contracting Solutions | Greenville, SC &amp; Anderson, SC Contractor";
-const pageDesc = "Learn about CTH Contracting Solutions. 15+ years experience in pole barns, roofing, and construction services across Greenville, SC &amp; Anderson, SC. Licensed & insured contractor.";
+const pageTitle = "About Us | CTH Contracting Solutions | Greenville, SC & Anderson, SC Contractor";
+const pageDesc = "Learn about CTH Contracting Solutions. 15+ years experience in pole barns, roofing, and construction services across Greenville, SC & Anderson, SC. Licensed & insured contractor.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -18,13 +18,32 @@ const jsonLd = {
 <Layout title={pageTitle} description={pageDesc} canonical="/about" jsonLd={jsonLd}>
   <Header />
   
-  <!-- Hero -->
-  <section class="bg-gradient-to-r from-red-900 to-red-800 text-white py-20 border-b-4 border-gold-400">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-wide">About CTH Contracting Solutions</h1>
-      <p class="text-xl text-gold-200 max-w-3xl mx-auto">
-        Building quality structures and lasting relationships across Greenville, SC &amp; Anderson, SC since 2008.
+  <!-- Hero - Full Screen Style Matching Homepage -->
+  <section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('/images/hero-bg.png') center/cover no-repeat;">
+    
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto">
+      <!-- Small Logo -->
+      <div class="mb-6">
+        <img src="/images/logo.png" alt="CTH Contracting Solutions" class="w-full max-w-xs mx-auto drop-shadow-2xl opacity-90" />
+      </div>
+      
+      <!-- Title -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-wide mb-6 drop-shadow-lg">
+        About Us
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="text-xl md:text-2xl text-gold-200 font-medium tracking-wide mb-8 drop-shadow-md max-w-3xl mx-auto">
+        Building quality structures and lasting relationships across Greenville, SC & Anderson, SC since 2008.
       </p>
+      
+      <!-- CTA Button -->
+      <div class="flex justify-center">
+        <a href="/contact" class="bg-transparent border-2 border-white text-white font-black py-4 px-10 rounded uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:bg-white hover:text-black">
+          Get Estimate
+        </a>
+      </div>
     </div>
   </section>
   
@@ -38,7 +57,7 @@ const jsonLd = {
             <p>
               CTH Contracting Solutions was founded with a simple mission: provide quality construction services 
               with integrity and professionalism. What started as a small team handling local pole barn projects 
-              has grown into a full-service contracting company serving homeowners and businesses across Greenville, SC &amp; Anderson, SC.
+              has grown into a full-service contracting company serving homeowners and businesses across Upstate South Carolina.
             </p>
             <p>
               For over 15 years, we've built our reputation one project at a time. We believe in doing things 
@@ -108,7 +127,7 @@ const jsonLd = {
   <!-- CTA -->
   <section class="py-20 bg-red-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-black text-white mb-4 uppercase tracking-wide">Ready to Work With Us?</h2>
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-wide">Ready to Work With Us?</h2>
       <p class="text-xl text-gold-200 mb-8">Let's discuss your project. Free estimates, no pressure.</p>
       <a href="/contact" class="inline-block bg-orange-600 hover:bg-orange-500 text-white font-black py-4 px-10 rounded transition-all duration-300 uppercase tracking-wider">Get Free Quote</a>
     </div>

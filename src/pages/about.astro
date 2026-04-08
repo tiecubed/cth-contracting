@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "About Us | CTH Contracting Solutions | Georgia Contractor";
-const pageDesc = "Learn about CTH Contracting Solutions. 15+ years experience in pole barns, metal roofing, and construction services across Georgia. Licensed & insured contractor.";
+const pageDesc = "Learn about CTH Contracting Solutions. 15+ years experience in pole barns, roofing, and construction services across Georgia. Licensed & insured contractor.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -19,10 +19,10 @@ const jsonLd = {
   <Header />
   
   <!-- Hero -->
-  <section class="bg-gradient-to-r from-brand-800 to-brand-600 text-white py-16">
+  <section class="bg-gradient-to-r from-red-800 to-red-700 text-white py-16 border-b-4 border-gold-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">About CTH Contracting Solutions</h1>
-      <p class="text-xl text-brand-100 max-w-3xl mx-auto">
+      <p class="text-xl text-gold-100 max-w-3xl mx-auto">
         Building quality structures and lasting relationships across Georgia since 2008.
       </p>
     </div>
@@ -33,8 +33,8 @@ const jsonLd = {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-          <div class="prose text-gray-600 space-y-4">
+          <h2 class="text-3xl font-bold text-red-900 mb-6">Our Story</h2>
+          <div class="prose text-red-800 space-y-4">
             <p>
               CTH Contracting Solutions was founded with a simple mission: provide quality construction services 
               with integrity and professionalism. What started as a small team handling local pole barn projects 
@@ -42,119 +42,75 @@ const jsonLd = {
             </p>
             <p>
               For over 15 years, we've built our reputation one project at a time. We believe in doing things 
-              right the first time—using quality materials, following best practices, and standing behind our work 
-              with comprehensive warranties.
-            </p>
-            <p>
-              Today, we're proud to be Georgia's trusted source for pole barns, metal roofing, fencing, and 
-              general contracting services. Our team combines old-school craftsmanship with modern techniques 
-              to deliver results that exceed expectations.
+              right the first time—using quality materials, following best practices, and standing behind our work.
             </p>
           </div>
         </div>
-        <div class="bg-gray-200 rounded-2xl aspect-[4/3] flex items-center justify-center text-gray-400">
-          <span>Company Photo / Team Photo</span>
+        <div class="bg-gray-200 rounded-2xl aspect-[4/3] flex items-center justify-center text-gray-400 border-4 border-gold-400">
+          <span>Company Photo</span>
         </div>
       </div>
     </div>
   </section>
   
   <!-- Values -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-16 bg-gold-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Why We Stand Out</h2>
+      <h2 class="text-3xl font-bold text-red-900 text-center mb-12">Why We Stand Out</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-xl shadow-sm">
+        <div class="bg-white p-8 rounded-xl shadow-md border-2 border-gold-200">
           <div class="text-4xl mb-4">🎯</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Quality First</h3>
-          <p class="text-gray-600">We never cut corners. Every project receives the same attention to detail, whether it's a small repair or a major build.</p>
+          <h3 class="text-xl font-bold text-red-900 mb-2">Quality First</h3>
+          <p class="text-red-800">We never cut corners. Every project receives the same attention to detail.</p>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm">
+        <div class="bg-white p-8 rounded-xl shadow-md border-2 border-gold-200">
           <div class="text-4xl mb-4">🤝</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Honest Communication</h3>
-          <p class="text-gray-600">Clear timelines, upfront pricing, and regular updates. You'll never be left wondering about your project.</p>
+          <h3 class="text-xl font-bold text-red-900 mb-2">Honest Communication</h3>
+          <p class="text-red-800">Clear timelines, upfront pricing, and regular updates.</p>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm">
+        <div class="bg-white p-8 rounded-xl shadow-md border-2 border-gold-200">
           <div class="text-4xl mb-4">🏆</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Proven Experience</h3>
-          <p class="text-gray-600">15+ years in the industry means we've seen it all. We know what works and how to solve problems efficiently.</p>
+          <h3 class="text-xl font-bold text-red-900 mb-2">Proven Experience</h3>
+          <p class="text-red-800">15+ years in the industry means we've seen it all.</p>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Certifications -->
+  <!-- Stats -->
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-brand-700 rounded-2xl p-8 md:p-12 text-white text-center">
+      <div class="bg-red-700 rounded-2xl p-8 md:p-12 text-white text-center border-4 border-gold-400">
         <h2 class="text-3xl font-bold mb-4">Licensed, Insured & Experienced</h2>
-        <p class="text-xl text-brand-100 mb-8">Your project deserves a contractor you can trust.</p>
+        <p class="text-xl text-gold-100 mb-8">Your project deserves a contractor you can trust.</p>
         <div class="grid md:grid-cols-4 gap-6">
           <div>
-            <div class="text-4xl font-bold mb-2">15+</div>
-            <div class="text-brand-200">Years Experience</div>
+            <div class="text-4xl font-bold text-gold-400 mb-2">15+</div>
+            <div class="text-gold-100">Years Experience</div>
           </div>
           <div>
-            <div class="text-4xl font-bold mb-2">500+</div>
-            <div class="text-brand-200">Projects Completed</div>
+            <div class="text-4xl font-bold text-gold-400 mb-2">500+</div>
+            <div class="text-gold-100">Projects Completed</div>
           </div>
           <div>
-            <div class="text-4xl font-bold mb-2">100%</div>
-            <div class="text-brand-200">Licensed & Insured</div>
+            <div class="text-4xl font-bold text-gold-400 mb-2">100%</div>
+            <div class="text-gold-100">Licensed & Insured</div>
           </div>
           <div>
-            <div class="text-4xl font-bold mb-2">5★</div>
-            <div class="text-brand-200">Customer Rating</div>
+            <div class="text-4xl font-bold text-gold-400 mb-2">5★</div>
+            <div class="text-gold-100">Customer Rating</div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Service Area -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">Service Area</h2>
-          <p class="text-gray-600 mb-6">
-            We serve communities throughout Georgia, bringing quality construction services to rural and suburban 
-            areas alike. Based in the heart of Georgia, we're local contractors who understand local needs.
-          </p>
-          <h3 class="font-semibold text-gray-900 mb-2">Areas we serve include:</h3>
-          <ul class="grid grid-cols-2 gap-2 text-gray-600">
-            <li>• Greater Atlanta Area</li>
-            <li>• Macon & Middle GA</li>
-            <li>• Augusta Region</li>
-            <li>• Savannah Area</li>
-            <li>• Columbus Region</li>
-            <li>• Albany & South GA</li>
-            <li>• Athens Area</li>
-            <li>• All Surrounding Counties</li>
-          </ul>
-        </div>
-        <div class="bg-gray-200 rounded-2xl flex items-center justify-center text-gray-400">
-          <span>Georgia Service Area Map</span>
         </div>
       </div>
     </div>
   </section>
   
   <!-- CTA -->
-  <section class="py-16">
+  <section class="py-16 bg-gold-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Work With Us?</h2>
-      <p class="text-xl text-gray-600 mb-8">
-        Let's discuss your project. Free estimates, no pressure.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/contact" class="btn-primary">
-          Get Free Quote
-        </a>
-        <a href="/services" class="btn-secondary">
-          View Our Services
-        </a>
-      </div>
+      <h2 class="text-3xl font-bold text-red-900 mb-4">Ready to Work With Us?</h2>
+      <p class="text-xl text-red-700 mb-8">Let's discuss your project. Free estimates, no pressure.</p>
+      <a href="/contact" class="btn-primary">Get Free Quote</a>
     </div>
   </section>
   

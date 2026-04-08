@@ -1,13 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #f0f9ff;
-  --color-brand-100: #e0f2fe;
-  --color-brand-500: #0ea5e9;
-  --color-brand-600: #0284c7;
-  --color-brand-700: #0369a1;
-  --color-brand-800: #075985;
-  --color-brand-900: #0c4a6e;
+  /* Logo Colors - CTH Contracting */
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;      /* Primary - Barn Red */
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;      /* Dark Red */
+  
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;     /* Cream background */
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;     /* Gold accent */
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  
+  --color-wood-600: #92400e;     /* Wood brown */
+  --color-wood-700: #78350f;
+  --color-wood-800: #451a03;
 }
 
 html {
@@ -27,14 +42,18 @@ body {
     justify-content: center;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    font-weight: 500;
-    color: white;
-    background-color: var(--color-brand-600);
+    font-weight: 600;
+    color: #000;
+    background-color: var(--color-gold-400);
     border-radius: 0.5rem;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
+    border: 2px solid var(--color-gold-400);
   }
   .btn-primary:hover {
-    background-color: var(--color-brand-700);
+    background-color: var(--color-gold-300);
+    border-color: var(--color-gold-300);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
   }
   
   .btn-secondary {
@@ -43,14 +62,42 @@ body {
     justify-content: center;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    font-weight: 500;
-    color: #374151;
-    background-color: white;
-    border: 1px solid #d1d5db;
+    font-weight: 600;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
     border-radius: 0.5rem;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
   }
   .btn-secondary:hover {
-    background-color: #f9fafb;
+    background-color: white;
+    color: var(--color-red-700);
   }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-red-700);
+    background-color: transparent;
+    border: 2px solid var(--color-red-700);
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover {
+    background-color: var(--color-red-700);
+    color: white;
+  }
+}
+
+/* Custom utility classes */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }

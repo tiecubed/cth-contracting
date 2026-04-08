@@ -4,10 +4,9 @@ const currentYear = new Date().getFullYear();
 const footerLinks = {
   services: [
     { label: 'Pole Barn Building', href: '/services/pole-barns' },
+    { label: 'Roofing Services', href: '/services/roofing' },
     { label: 'Fence Building', href: '/services/fences' },
-    { label: 'Metal Roof Replacement', href: '/services/metal-roofs' },
-    { label: 'Truss Repair', href: '/services/truss-repair' },
-    { label: 'General Contracting', href: '/services/general-contracting' },
+    { label: 'Land Grading', href: '/services/grading' },
   ],
   company: [
     { label: 'About Us', href: '/about' },
@@ -17,21 +16,21 @@ const footerLinks = {
 };
 ---
 
-<footer class="bg-gray-900 text-gray-300">
+<footer class="bg-red-900 text-gold-100 border-t-4 border-gold-400">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Brand & Contact -->
       <div>
-        <h3 class="text-white text-lg font-bold mb-4">CTH Contracting Solutions</h3>
+        <h3 class="text-gold-400 text-lg font-bold mb-4">CTH Contracting Solutions</h3>
         <p class="mb-4">Quality construction services you can trust. Licensed, insured, and built to last.</p>
         <div class="space-y-2">
           <p>
-            <a href="tel:+15551234567" class="hover:text-white transition-colors">
+            <a href="tel:+15551234567" class="hover:text-gold-400 transition-colors">
               📞 (555) 123-4567
             </a>
           </p>
           <p>
-            <a href="mailto:info@cthcontractingsolutions.com" class="hover:text-white transition-colors">
+            <a href="mailto:info@cthcontractingsolutions.com" class="hover:text-gold-400 transition-colors">
               ✉️ info@cthcontractingsolutions.com
             </a>
           </p>
@@ -41,11 +40,11 @@ const footerLinks = {
       
       <!-- Services -->
       <div>
-        <h4 class="text-white font-semibold mb-4">Our Services</h4>
+        <h4 class="text-gold-400 font-semibold mb-4">Our Services</h4>
         <ul class="space-y-2">
           {footerLinks.services.map(link => (
             <li>
-              <a href={link.href} class="hover:text-white transition-colors">
+              <a href={link.href} class="hover:text-gold-400 transition-colors">
                 {link.label}
               </a>
             </li>
@@ -55,11 +54,11 @@ const footerLinks = {
       
       <!-- Company -->
       <div>
-        <h4 class="text-white font-semibold mb-4">Company</h4>
+        <h4 class="text-gold-400 font-semibold mb-4">Company</h4>
         <ul class="space-y-2">
           {footerLinks.company.map(link => (
             <li>
-              <a href={link.href} class="hover:text-white transition-colors">
+              <a href={link.href} class="hover:text-gold-400 transition-colors">
                 {link.label}
               </a>
             </li>
@@ -74,7 +73,7 @@ const footerLinks = {
     </div>
     
     <!-- Bottom bar -->
-    <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+    <div class="border-t border-red-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
       <p class="text-sm">© {currentYear} CTH Contracting Solutions. All rights reserved.</p>
       <p class="text-sm mt-2 md:mt-0">Licensed & Insured Contractor</p>
     </div>

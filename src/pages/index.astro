@@ -3,14 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "CTH Contracting Solutions | Pole Barn Builders & Metal Roofing in Georgia";
-const pageDesc = "Professional pole barn construction, metal roof replacement, fence building, and truss repair services in Georgia. Free estimates. Licensed & insured contractor with 15+ years experience.";
+const pageTitle = "CTH Contracting Solutions | Pole Barns, Roofing, Fencing & Grading in Georgia";
+const pageDesc = "Professional pole barn construction, roofing, fence building, and land grading services in Georgia. Free estimates. Licensed & insured contractor with 15+ years experience.";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "CTH Contracting Solutions",
-  "image": "https://cthcontractingsolutions.com/og-image.jpg",
+  "image": "https://cthcontractingsolutions.com/images/logo.png",
   "@id": "https://cthcontractingsolutions.com",
   "url": "https://cthcontractingsolutions.com",
   "telephone": "+15551234567",
@@ -20,15 +20,12 @@ const jsonLd = {
     "addressRegion": "GA",
     "addressCountry": "US"
   },
-  "geo": {
-    "@type": "GeoCoordinates"
-  },
   "areaServed": {
     "@type": "State",
     "name": "Georgia"
   },
   "priceRange": "$$",
-  "serviceType": ["Pole Barn Construction", "Metal Roofing", "Fence Building", "Truss Repair", "General Contracting"]
+  "serviceType": ["Pole Barn Construction", "Roofing", "Fence Building", "Land Grading"]
 };
 
 const services = [
@@ -39,10 +36,10 @@ const services = [
     href: "/services/pole-barns"
   },
   {
-    title: "Metal Roof Replacement",
-    desc: "Durable metal roofing solutions that protect your investment for decades. Expert installation guaranteed.",
+    title: "Roofing Services",
+    desc: "Durable metal roofing and roof repairs that protect your investment for decades. Expert installation guaranteed.",
     icon: "🏠",
-    href: "/services/metal-roofs"
+    href: "/services/roofing"
   },
   {
     title: "Fence Building",
@@ -51,24 +48,18 @@ const services = [
     href: "/services/fences"
   },
   {
-    title: "Truss Repair",
-    desc: "Structural truss repair and replacement. Licensed engineers ensure your building meets code.",
-    icon: "🔧",
-    href: "/services/truss-repair"
-  },
-  {
-    title: "General Contracting",
-    desc: "Full-service construction management. From small repairs to major builds, we handle it all.",
-    icon: "🔨",
-    href: "/services/general-contracting"
-  },
+    title: "Land Grading",
+    desc: "Professional site preparation and grading services. Leveling, excavation, and drainage solutions.",
+    icon: "🚜",
+    href: "/services/grading"
+  }
 ];
 
 const features = [
   { title: "Licensed & Insured", desc: "Full coverage for your protection" },
   { title: "15+ Years Experience", desc: "Proven track record of quality" },
   { title: "Free Estimates", desc: "No-obligation quotes on all projects" },
-  { title: "Local & Trusted", desc: "Georgia-based contractors you can count on" },
+  { title: "Georgia Owned", desc: "Local contractors you can trust" },
 ];
 ---
 
@@ -76,38 +67,38 @@ const features = [
   <Header />
   
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white py-20 lg:py-32">
-    <div class="absolute inset-0 bg-black/30"></div>
+  <section class="relative bg-gradient-to-br from-red-900 via-red-800 to-red-700 text-white py-20 lg:py-32">
+    <div class="absolute inset-0 bg-black/40"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Georgia's Trusted <span class="text-brand-300">Pole Barn</span> & Metal Roofing Experts
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-shadow-lg">
+          Georgia's Trusted <span class="text-gold-400">Pole Barn</span> & Roofing Experts
         </h1>
-        <p class="text-xl md:text-2xl mb-8 text-brand-100">
+        <p class="text-xl md:text-2xl mb-8 text-gold-100">
           Professional construction services built on quality, integrity, and lasting relationships. 
           Serving Georgia homeowners and businesses for over 15 years.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact" class="btn-primary text-lg px-8 py-4 bg-brand-500 hover:bg-brand-400">
+          <a href="/contact" class="btn-primary text-lg px-8 py-4">
             Get Free Quote
           </a>
-          <a href="/services" class="btn-secondary text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-brand-900">
+          <a href="/services" class="btn-secondary text-lg px-8 py-4">
             Our Services
           </a>
         </div>
-        <p class="mt-6 text-brand-200">📞 Call (555) 123-4567 for immediate assistance</p>
+        <p class="mt-6 text-gold-200 font-semibold">📞 Call (555) 123-4567 for immediate assistance</p>
       </div>
     </div>
   </section>
   
   <!-- Features Bar -->
-  <section class="bg-gray-50 py-8 border-b">
+  <section class="bg-gold-100 py-8 border-b-4 border-red-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {features.map(feat => (
           <div>
-            <h3 class="font-semibold text-gray-900">{feat.title}</h3>
-            <p class="text-sm text-gray-600">{feat.desc}</p>
+            <h3 class="font-bold text-red-900 text-lg">{feat.title}</h3>
+            <p class="text-sm text-red-800">{feat.desc}</p>
           </div>
         ))}
       </div>
@@ -115,27 +106,27 @@ const features = [
   </section>
   
   <!-- Services Section -->
-  <section class="py-16 lg:py-24" id="services">
+  <section class="py-16 lg:py-24 bg-white" id="services">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-red-900 mb-4">
           Construction Services Built to Last
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          From custom pole barns to metal roof replacements, we deliver quality craftsmanship 
+        <p class="text-xl text-red-700 max-w-3xl mx-auto">
+          From custom pole barns to roofing and grading, we deliver quality craftsmanship 
           that stands the test of time.
         </p>
       </div>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {services.map(service => (
-          <a href={service.href} class="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-8 border border-gray-100">
+          <a href={service.href} class="group block bg-gold-50 rounded-xl shadow-md hover:shadow-xl transition-all p-8 border-2 border-gold-200 hover:border-red-600">
             <div class="text-4xl mb-4">{service.icon}</div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">
+            <h3 class="text-xl font-bold text-red-900 mb-2 group-hover:text-red-700 transition-colors">
               {service.title}
             </h3>
-            <p class="text-gray-600">{service.desc}</p>
-            <span class="inline-flex items-center mt-4 text-brand-600 font-medium">
+            <p class="text-red-800">{service.desc}</p>
+            <span class="inline-flex items-center mt-4 text-red-700 font-bold hover:text-red-900">
               Learn more →
             </span>
           </a>
@@ -145,20 +136,20 @@ const features = [
   </section>
   
   <!-- CTA Section -->
-  <section class="bg-brand-700 text-white py-16">
+  <section class="bg-red-700 text-white py-16 border-y-4 border-gold-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">
         Ready to Start Your Project?
       </h2>
-      <p class="text-xl text-brand-100 mb-8 max-w-2xl mx-auto">
+      <p class="text-xl text-gold-100 mb-8 max-w-2xl mx-auto">
         Get a free, no-obligation estimate for your construction project. 
         We're ready to bring your vision to life.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/contact" class="btn-primary bg-white text-brand-700 hover:bg-gray-100">
+        <a href="/contact" class="btn-primary text-lg px-8 py-4">
           Request Free Quote
         </a>
-        <a href="tel:15551234567" class="btn-secondary border-white text-white hover:bg-white/10">
+        <a href="tel:15551234567" class="btn-secondary border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-red-900 text-lg px-8 py-4">
           Call (555) 123-4567
         </a>
       </div>
@@ -166,45 +157,45 @@ const features = [
   </section>
   
   <!-- Trust Section -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-16 bg-gold-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          <h2 class="text-3xl font-bold text-red-900 mb-4">
             Why Choose CTH Contracting?
           </h2>
           <div class="space-y-4">
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">✓</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-700 flex items-center justify-center text-gold-400 font-bold">✓</div>
               <div>
-                <h4 class="font-semibold text-gray-900">Quality Materials</h4>
-                <p class="text-gray-600">We use only premium-grade materials that meet or exceed local building codes.</p>
+                <h4 class="font-semibold text-red-900">Quality Materials</h4>
+                <p class="text-red-800">We use only premium-grade materials that meet or exceed local building codes.</p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">✓</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-700 flex items-center justify-center text-gold-400 font-bold">✓</div>
               <div>
-                <h4 class="font-semibold text-gray-900">Experienced Crew</h4>
-                <p class="text-gray-600">Our team has 15+ years of hands-on construction experience.</p>
+                <h4 class="font-semibold text-red-900">Experienced Crew</h4>
+                <p class="text-red-800">Our team has 15+ years of hands-on construction experience.</p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">✓</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-700 flex items-center justify-center text-gold-400 font-bold">✓</div>
               <div>
-                <h4 class="font-semibold text-gray-900">On-Time Delivery</h4>
-                <p class="text-gray-600">We respect your time and complete projects on schedule.</p>
+                <h4 class="font-semibold text-red-900">On-Time Delivery</h4>
+                <p class="text-red-800">We respect your time and complete projects on schedule.</p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">✓</div>
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-700 flex items-center justify-center text-gold-400 font-bold">✓</div>
               <div>
-                <h4 class="font-semibold text-gray-900">Warranty Protected</h4>
-                <p class="text-gray-600">All work backed by comprehensive warranties for peace of mind.</p>
+                <h4 class="font-semibold text-red-900">Warranty Protected</h4>
+                <p class="text-red-800">All work backed by comprehensive warranties for peace of mind.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400">
+        <div class="bg-gray-200 rounded-2xl aspect-video flex items-center justify-center text-gray-400 border-4 border-red-700">
           <span class="text-lg">Photo Gallery Coming Soon</span>
         </div>
       </div>
@@ -212,11 +203,11 @@ const features = [
   </section>
   
   <!-- Contact Banner -->
-  <section class="py-12 border-t">
+  <section class="py-12 border-t border-red-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-lg text-gray-600">
-        Have questions? <a href="/contact" class="text-brand-600 font-semibold hover:underline">Contact us</a> today or call 
-        <a href="tel:15551234567" class="text-brand-600 font-semibold hover:underline">(555) 123-4567</a>
+      <p class="text-lg text-red-800">
+        Have questions? <a href="/contact" class="text-red-700 font-bold hover:text-red-900 hover:underline">Contact us</a> today or call 
+        <a href="tel:15551234567" class="text-red-700 font-bold hover:text-red-900 hover:underline">(555) 123-4567</a>
       </p>
     </div>
   </section>

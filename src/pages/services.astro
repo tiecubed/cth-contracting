@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "Construction Services | Pole Barns, Roofing, Fencing & Grading | CTH";
-const pageDesc = "Full-service contractor in Greenville, SC &amp; Anderson, SC. Pole barns, roofing, fence building & land grading. Free estimates. Licensed & insured.";
+const pageDesc = "Full-service contractor in Greenville, SC & Anderson, SC. Pole barns, roofing, fence building & land grading. Free estimates. Licensed & insured.";
 
 const services = [
   {
@@ -18,7 +18,7 @@ const services = [
   {
     title: "Roofing Services",
     shortDesc: "Durable roofing that protects for decades",
-    description: "Upgrade to a metal roof that stands up to Georgia's weather while adding value to your property. We install standing seam, corrugated, and specialty metal roofing systems with professional results.",
+    description: "Upgrade to a metal roof that stands up to South Carolina's weather while adding value to your property. We install standing seam, corrugated, and specialty metal roofing systems with professional results.",
     features: ["Standing seam roofs", "Corrugated metal", "Reroofing services", "Leak repairs", "Energy efficient"],
     icon: "🏠",
     href: "/services/roofing"
@@ -29,7 +29,7 @@ const services = [
     description: "Enhance your property's security and curb appeal with professional fence installation. We build wood privacy fences, vinyl fencing, chain link, and ornamental metal fences.",
     features: ["Wood privacy fences", "Vinyl fencing", "Chain link", "Ornamental metal", "Farm & ranch fencing"],
     icon: "🚧",
-    href: "/services/fences"
+    href: "/services/fencing"
   },
   {
     title: "Land Grading",
@@ -46,12 +46,19 @@ const services = [
   <Header />
   
   <!-- Hero -->
-  <section class="bg-gradient-to-r from-red-900 to-red-800 text-white py-20 border-b-4 border-gold-400">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-wide">Our Services</h1>
-      <p class="text-xl text-gold-200 max-w-3xl mx-auto">
-        Professional construction services across Greenville, SC &amp; Anderson, SC. Quality craftsmanship, fair pricing, and dependable results.
+  <section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('/images/hero-bg.png') center/cover no-repeat;">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-wide mb-6 drop-shadow-lg">
+        Our Services
+      </h1>
+      <p class="text-xl md:text-2xl text-gold-200 font-medium tracking-wide mb-8 drop-shadow-md max-w-3xl mx-auto">
+        Professional construction services across Greenville, SC & Anderson, SC. Quality craftsmanship, fair pricing, and dependable results.
       </p>
+      <div class="flex justify-center">
+        <a href="/contact" class="bg-transparent border-2 border-white text-white font-black py-4 px-10 rounded uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:bg-white hover:text-black">
+          Get Estimate
+        </a>
+      </div>
     </div>
   </section>
   

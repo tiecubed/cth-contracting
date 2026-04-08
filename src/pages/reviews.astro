@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "Customer Reviews | CTH Contracting Solutions | Greenville, SC &amp; Anderson, SC";
-const pageDesc = "Read what our customers say about CTH Contracting Solutions. 5-star reviews for pole barns, roofing, fencing, and grading services across Greenville, SC &amp; Anderson, SC and South Carolina.";
+const pageTitle = "Customer Reviews | CTH Contracting Solutions | Greenville, SC & Anderson, SC";
+const pageDesc = "Read what our customers say about CTH Contracting Solutions. 5-star reviews for pole barns, roofing, fencing, and grading services across Greenville, SC & Anderson, SC.";
 
 const reviews = [
   {
@@ -58,12 +58,19 @@ const jsonLd = {
   <Header />
   
   <!-- Hero -->
-  <section class="bg-gradient-to-r from-red-900 to-red-800 text-white py-20 border-b-4 border-gold-400">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-wide">Customer Reviews</h1>
-      <p class="text-xl text-gold-200 max-w-3xl mx-auto">
+  <section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('/images/hero-bg.png') center/cover no-repeat;">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-wide mb-6 drop-shadow-lg">
+        Customer Reviews
+      </h1>
+      <p class="text-xl md:text-2xl text-gold-200 font-medium tracking-wide mb-8 drop-shadow-md max-w-3xl mx-auto">
         Don't just take our word for it. See what our customers have to say about working with CTH Contracting.
       </p>
+      <div class="flex justify-center">
+        <a href="/contact" class="bg-transparent border-2 border-white text-white font-black py-4 px-10 rounded uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:bg-white hover:text-black">
+          Get Estimate
+        </a>
+      </div>
     </div>
   </section>
   
@@ -111,7 +118,7 @@ const jsonLd = {
         <div class="bg-neutral-800 p-8 rounded-xl border border-neutral-700">
           <div class="text-5xl font-black text-gold-400 mb-2">500+</div>
           <div class="text-white font-bold text-xl">Projects Completed</div>
-          <div class="text-neutral-400">Across Georgia & South Carolina</div>
+          <div class="text-neutral-400">Across Greenville & Anderson, SC</div>
         </div>
         <div class="bg-neutral-800 p-8 rounded-xl border border-neutral-700">
           <div class="text-5xl font-black text-gold-400 mb-2">15+</div>
@@ -132,7 +139,7 @@ const jsonLd = {
           Get Free Quote
         </a>
         <a href="tel:8646171719" class="border-2 border-white text-white font-black py-4 px-10 rounded hover:bg-white hover:text-red-900 transition-all duration-300 uppercase tracking-wider">
-          Call (555) 123-4567
+          Call (864) 617-1719
         </a>
       </div>
     </div>
